@@ -1,0 +1,18 @@
+[    3930ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/9d49d23e8da7ec0b/1772217738281/66bc3ae17afd296a4918beab04667ed05f9efe80778e0a376fc1bfb66dd64bfc/hL6KLZiNq7BR7aU:0
+[    4240ms] [ERROR] %c%d font-size:0;color:transparent NaN @ https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/ov2/av0/rch/orvw7/0x4AAAAAAAJel0iaAR3mgkjp/light/fbE/new/flexible?lang=auto:0
+[    4240ms] [ERROR] %c%d font-size:0;color:transparent NaN @ https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/ov2/av0/rch/orvw7/0x4AAAAAAAJel0iaAR3mgkjp/light/fbE/new/flexible?lang=auto:0
+[    4241ms] [WARNING] %c%d font-size:0;color:transparent NaN @ https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/ov2/av0/rch/orvw7/0x4AAAAAAAJel0iaAR3mgkjp/light/fbE/new/flexible?lang=auto:0
+[    4241ms] [WARNING] %c%d font-size:0;color:transparent NaN @ https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/ov2/av0/rch/orvw7/0x4AAAAAAAJel0iaAR3mgkjp/light/fbE/new/flexible?lang=auto:0
+[    4397ms] [ERROR]  Note that 'script-src' was not explicitly set, so 'default-src' is used as a fallback. @ https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/ov2/av0/rch/orvw7/0x4AAAAAAAJel0iaAR3mgkjp/light/fbE/new/flexible?lang=auto:0
+[    9321ms] [WARNING] The resource https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/cmg/1 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/ov2/av0/rch/orvw7/0x4AAAAAAAJel0iaAR3mgkjp/light/fbE/new/flexible?lang=auto:0
+[   20185ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://dash.cloudflare.com/api/v4/zones?order=name&direction=asc&per_page=1&type=full%2Cpartial%2Csecondary:0
+[   21215ms] [ERROR] SparrowEventNotAllowedError: Event not allowed: "sign in with github". The event name likely needs to be added to validateDashSchema.ts
+    at https://dash.cloudflare.com/cf-6246c7fa2ad62efc.js:3:268353
+    at https://dash.cloudflare.com/cf-6246c7fa2ad62efc.js:3:268402
+    at Object.appliedPostData (https://dash.cloudflare.com/cf-6246c7fa2ad62efc.js:3:196430)
+    at Module.g (https://dash.cloudflare.com/cf-d72be17a88f79374.js:3:2324)
+    at onLoginSuccess (https://dash.cloudflare.com/cf-a369494459e8c94c.js:3:566)
+    at https://dash.cloudflare.com/cf-6ada8c1259d16c2e.js:3:18094 @ https://dash.cloudflare.com/cf-7afcb91cf510db01.js:2
+[   27277ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://dash.cloudflare.com/api/v4/accounts/ee5123663792160a81b4940b1e6a612c/access/organizations:0
+[   27831ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://dash.cloudflare.com/api/v4/accounts/ee5123663792160a81b4940b1e6a612c/access/organizations:0
+[   30186ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://dash.cloudflare.com/api/v4/accounts/ee5123663792160a81b4940b1e6a612c/access/organizations:0
