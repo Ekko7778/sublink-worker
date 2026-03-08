@@ -39,6 +39,11 @@ export const formLogicFn = (t) => {
             customShortCode: '',
             parsingUrl: false,
             parseDebounceTimer: null,
+            // QR Code related states
+            showQrModal: false,
+            qrSvg: '',
+            qrUrl: '',
+            qrLinkType: '',
             // These will be populated from window.APP_TRANSLATIONS
             processingText: '',
             convertText: '',
@@ -60,8 +65,8 @@ export const formLogicFn = (t) => {
                     this.configSaveFailedText = window.APP_TRANSLATIONS.configSaveFailed;
                 }
 
-                // Load saved data
-                this.input = localStorage.getItem('inputTextarea') || '';
+                // Load saved data (input is not persisted - user preference)
+                this.input = '';
                 this.showAdvanced = localStorage.getItem('advancedToggle') === 'true';
                 this.groupByCountry = localStorage.getItem('groupByCountry') === 'true';
                 this.includeAutoSelect = localStorage.getItem('includeAutoSelect') !== 'false';
@@ -88,9 +93,8 @@ export const formLogicFn = (t) => {
                 // Initialize rules
                 this.applyPredefinedRule();
 
-                // Watchers to save state
+                // Watchers to save state (input is not saved to localStorage)
                 this.$watch('input', val => {
-                    localStorage.setItem('inputTextarea', val);
                     this.handleInputChange(val);
                 });
                 this.$watch('showAdvanced', val => localStorage.setItem('advancedToggle', val));
@@ -509,6 +513,35 @@ export const formLogicFn = (t) => {
                     console.error('Error parsing subscription URL:', error);
                 } finally {
                     this.parsingUrl = false;
+                }
+            },
+
+            // Populate form fields from parsed URL
+            // Generate QR Code
+            generateQrCode(url, linkType) {
+                try {
+                    const qr = qrcode(0, 'M');
+                    qr.addData(url);
+                    qr.make();
+                    const size = 8;
+                    const moduleCount = qr.getModuleCount();
+                    const qrSize = moduleCount * size;
+                    let svg = '<svg viewBox="0 0 ' + qrSize + ' ' + qrSize + '" xmlns="http://www.w3.org/2000/svg" style="width: 200px; height: 200px;">';
+                    svg += '<rect width="100%" height="100%" fill="#ffffff"/>';
+                    for (let row = 0; row < moduleCount; row++) {
+                        for (let col = 0; col < moduleCount; col++) {
+                            if (qr.isDark(row, col)) {
+                                svg += '<rect x="' + (col * size) + '" y="' + (row * size) + '" width="' + size + '" height="' + size + '" fill="#1f2937"/>';
+                            }
+                        }
+                    }
+                    svg += '</svg>';
+                    this.qrSvg = svg;
+                    this.qrUrl = url;
+                    this.qrLinkType = linkType;
+                    this.showQrModal = true;
+                } catch (error) {
+                    console.error('Error generating QR code:', error);
                 }
             },
 
